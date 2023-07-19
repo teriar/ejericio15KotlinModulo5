@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.cl.individual15kotlinjavamodulo5.databinding.ItemLayoutBinding
 
 class Adapter: RecyclerView.Adapter <Adapter.ViewHolder>() {
@@ -35,7 +36,7 @@ class Adapter: RecyclerView.Adapter <Adapter.ViewHolder>() {
         fun bind(pokemon: Pokemon) {
             binding.txtNombre.text = pokemon.nombre
             binding.txtEtiqueta.text = pokemon.tipo
-
+           Glide.with(binding.root).load(pokemon.imgUrl).into(binding.imageView)
 
         
         }
